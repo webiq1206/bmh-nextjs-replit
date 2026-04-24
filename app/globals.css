@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
+/* ── BMH Brand CSS Custom Properties ──────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core brand colors */
+  --bmh-green: #3d564a;        /* Primary green — nav, CTA sections, footer */
+  --bmh-green-dark: #2c4039;   /* Hover/active state for green elements */
+  --bmh-red: #d63637;          /* Accent red — primary CTA buttons */
+  --bmh-red-dark: #b82d2e;     /* Hover state for red buttons */
+  --bmh-blue: #066aab;         /* Links, secondary accent */
+  --bmh-white: #ffffff;
+  --bmh-bg-light: #f9fbfc;     /* Off-white section backgrounds */
+  --bmh-dark: #32373c;         /* Primary body text */
+  --bmh-gray: #6b7280;         /* Secondary/muted text */
+  --bmh-border: #e5e7eb;       /* Borders, dividers */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Base Reset & Typography ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--bmh-dark);
+  background: var(--bmh-white);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Utility: section padding ──────────────────────────────────────────────── */
+.section-pad {
+  padding: 5rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding: 3rem 1rem;
+  }
 }
